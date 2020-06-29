@@ -68,7 +68,7 @@ const Header = () => {
       <div className="header">
         <div className="title">Algorithm Visualizer</div>
       </div>
-      <div className="settings">
+      <div className="settings" style={{ paddingTop: 3 }}>
         <div className="content">
           <div className="left-content">
             <span className="font-weight-bold cursor-pointer menu-item">
