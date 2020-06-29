@@ -1,0 +1,23 @@
+.root{
+    margin-left:250px;
+}
+.label{
+    background-color: #5a595a;
+    width: 90px;
+    margin-top:1px;
+    margin-left:-2px;
+    padding: 5px;
+    color:#bbbbbb;
+}
+.label span{
+    padding-left:10px;
+}
+
+#main-content-column{
+    width: 60%;
+    border-right: 2px solid #505050;
+}
+
+#code{
+    background-color: #1d1f21;
+}

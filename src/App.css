@@ -1,0 +1,21 @@
+.font-weight-bold{
+  font-weight: bold;
+}
+.cursor-pointer{
+  cursor: pointer;
+}
+* {
+  box-sizing: border-box;
+}
+.column {
+  float: left;
+  width: 40%;
+  height: 560px;
+}
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
