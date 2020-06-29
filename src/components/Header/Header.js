@@ -12,6 +12,7 @@ import {
   faCode,
   faChevronDown,
   faHeart,
+  faExpand,
 } from "@fortawesome/free-solid-svg-icons";
 
 // Context
@@ -31,6 +32,15 @@ const Header = () => {
         {
           name: "Sum Of Subsets",
           value: "SumOfSubsets",
+        },
+      ],
+    },
+    {
+      name: "Simple Recursion",
+      subCategories: [
+        {
+          name: "N Factorial",
+          value: "NFactorial",
         },
       ],
     },
@@ -109,6 +119,12 @@ const Header = () => {
             </span>
             <span className="font-weight-bold cursor-pointer menu-item">
               <FontAwesomeIcon icon={faStar} /> Star
+            </span>
+            <span
+              className="font-weight-bold cursor-pointer menu-item"
+              onClick={() => document.body.requestFullscreen()}
+            >
+              <FontAwesomeIcon icon={faExpand} /> Full Screen
             </span>
             <span className="font-weight-bold cursor-pointer menu-item">
               <FontAwesomeIcon icon={faTachometerAlt} /> Speed

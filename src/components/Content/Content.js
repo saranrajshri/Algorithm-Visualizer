@@ -11,6 +11,9 @@ import LinearSearch from "../Algorithms/Search/LinearSearch/LinearSearch";
 import BinarySearch from "../Algorithms/Search/BinarySearch/BinarySearch";
 import JumpSearch from "../Algorithms/Search/JumpSearch/JumpSearch";
 import Fibonacci from "../Algorithms/DynamicProgramming/Fibonacci/Fibonacci";
+import NQueens from "../Algorithms/Backtracking/NQueens/NQueens";
+import SumOfSubSets from "../Algorithms/Backtracking/SumOfSubSets/SumOfSubsets";
+import NFactorial from "../Algorithms/Recursion/NFactorial";
 
 // CodeString
 // CPP
@@ -21,6 +24,7 @@ import {
   FibonacciCPP,
   NQueensCPP,
   SumOfSubsetsCPP,
+  NFactorialCPP,
 } from "../CodeStrings/CodeStringsCPP";
 
 import {
@@ -30,13 +34,12 @@ import {
   FibonacciPY,
   NQueensPY,
   SumOfSubSstsPY,
+  NFactorialPY,
 } from "../CodeStrings/CodeStringsPY";
 
 // Code Themes
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
-import NQueens from "../Algorithms/Backtracking/NQueens/NQueens";
-import SumOfSubSets from "../Algorithms/Backtracking/SumOfSubSets/SumOfSubsets";
 
 const Content = () => {
   const { selectedComponent } = useContext(Context);
@@ -50,6 +53,7 @@ const Content = () => {
     Fibonacci: Fibonacci,
     NQueens: NQueens,
     SumOfSubsets: SumOfSubSets,
+    NFactorial: NFactorial,
   };
   const codeStringsMappingCPP = {
     LinearSearch: LinearSearchCPP,
@@ -58,6 +62,7 @@ const Content = () => {
     Fibonacci: FibonacciCPP,
     NQueens: NQueensCPP,
     SumOfSubsets: SumOfSubsetsCPP,
+    NFactorial: NFactorialCPP,
   };
   const codeStringsMappingPY = {
     LinearSearch: LinearSearchPY,
@@ -66,6 +71,7 @@ const Content = () => {
     Fibonacci: FibonacciPY,
     NQueens: NQueensPY,
     SumOfSubsets: SumOfSubSstsPY,
+    NFactorial: NFactorialPY,
   };
 
   var Component = components[selectedComponent];
