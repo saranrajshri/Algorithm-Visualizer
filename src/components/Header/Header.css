@@ -83,23 +83,35 @@
     -webkit-transition: .2s;
     transition: opacity .2s;
     margin-left : 10px;
-  }
+}
   
-  .slider:hover {
+.slider:hover {
     opacity: 1;
-  }
+}
   
-  .slider::-webkit-slider-thumb {
+.slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     width: 10px;
     height: 10px;
     background: #242424;
     cursor: pointer;
-  }
+}
   
-  .slider::-moz-range-thumb {
+.slider::-moz-range-thumb {
     height: 10px;
     background: #242424;
     cursor: pointer;
-  }
+}
+.trademark{
+    float: right;
+    margin-top:-23px;
+    font-size: 12px;
+    color:#bbbbbb;   
+    margin-right:20px;
+}
+.profile-link{
+    color:#bbbbbb;
+    font-weight: bold;
+    text-decoration: none;
+}

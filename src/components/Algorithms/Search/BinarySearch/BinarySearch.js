@@ -25,7 +25,7 @@ const BinarySearch = () => {
     setTarget("");
 
     var tempArray = [];
-    var number = Math.floor(Math.random() * 99 + 1);
+    var number = Math.floor(Math.random() * 80 + 1);
     for (var i = number; i < number + 15; i++) {
       tempArray.push(i);
     }

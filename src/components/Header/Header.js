@@ -15,6 +15,7 @@ import {
   faTachometerAlt,
   faCode,
   faChevronDown,
+  faHeart,
 } from "@fortawesome/free-solid-svg-icons";
 
 // Context
@@ -74,6 +75,16 @@ const Header = () => {
     <div>
       <div className="header">
         <div className="title">Algorithm Visualizer</div>
+        <div className="trademark">
+          Made with <FontAwesomeIcon icon={faHeart} /> by{" "}
+          <a
+            href="https://linkedin.com/in/saranrajshri"
+            target="_blank"
+            className="profile-link"
+          >
+            Shri Saran Raj
+          </a>
+        </div>
       </div>
       <div className="settings" style={{ paddingTop: 3 }}>
         <div className="content">
