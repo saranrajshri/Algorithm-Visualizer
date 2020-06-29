@@ -2,9 +2,6 @@ export const LinearSearchCPP = `
 #include<bits/stdc++.h>
 using namespace std;
 
-vector<int> array = {45, 22, 68, 99, 100 ,120};
-int target = 45;
-
 int linearSearch(vector<int> array, int target){
     for(int i = 0; i < n; i++){
         if(array[i] == target) return i;
@@ -13,6 +10,8 @@ int linearSearch(vector<int> array, int target){
 }
 
 int main(){
+    vector<int> array = {45, 22, 68, 99, 100 ,120};
+    int target = 45;    
     cout << linearSearch(array, target) << endl;
     return 0;
 }
@@ -21,9 +20,6 @@ int main(){
 export const BinarySearchCPP = `
 #include<bits/stdc++.h>
 using namespace std;
-
-vector<int> array = {1, 2, 3, 4, 5, 6, 7, 8};
-int target = 7;
 
 int binarySearch(vector<int> array, int target){
     int left = 0;
@@ -39,6 +35,8 @@ int binarySearch(vector<int> array, int target){
 }
 
 int main(){
+    vector<int> array = {1, 2, 3, 4, 5, 6, 7, 8};
+    int target = 7;
     cout << binarySearch(array, target) << endl;
     return 0;
 }
@@ -48,9 +46,6 @@ int main(){
 export const JumpSearchCPP = `
 #include<bits/stdc++.h>
 using namespace std;
-
-vector<int> array = {1, 2, 3, 4, 5, 6, 7, 8};
-int target = 7;
 
 int jumpSearch(vector<int> array, int target){
     int step = sqrt(n); 
@@ -80,7 +75,34 @@ int jumpSearch(vector<int> array, int target){
 }
 
 int main(){
+    vector<int> array = {1, 2, 3, 4, 5, 6, 7, 8};
+    int target = 7;
     cout << jumpSearch(array, target) << endl;
+    return 0;
+}
+
+`;
+
+// DP
+export const FibonacciCPP = `
+#include<bits/stdc++.h>
+using namespace std;
+
+int n = 15;
+vector<int> dp(n);
+dp[0] = 0;
+dp[1] = 1;
+void generateFibonacci(vector<int> dp){
+    for(int i = 2; i < n; i++){
+        dp[i] = dp[i - 1] + dp[i - 2];
+    }
+
+    // Print values
+    for(int x : dp) cout << x << endl;
+}
+
+int main(){
+    generateFibonacci(array);
     return 0;
 }
 

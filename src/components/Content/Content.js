@@ -9,6 +9,8 @@ import { Context } from "../../context/Context";
 // Algorithms
 import LinearSearch from "../Algorithms/Search/LinearSearch/LinearSearch";
 import BinarySearch from "../Algorithms/Search/BinarySearch/BinarySearch";
+import JumpSearch from "../Algorithms/Search/JumpSearch/JumpSearch";
+import Fibonacci from "../Algorithms/DynamicProgramming/Fibonacci/Fibonacci";
 
 // CodeString
 // CPP
@@ -16,18 +18,19 @@ import {
   LinearSearchCPP,
   BinarySearchCPP,
   JumpSearchCPP,
+  FibonacciCPP,
 } from "../CodeStrings/CodeStringsCPP";
 
 import {
   LinearSearchPY,
   BinarySearchPY,
   JumpSearchPY,
+  FibonacciPY,
 } from "../CodeStrings/CodeStringsPY";
 
 // Code Themes
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
-import JumpSearch from "../Algorithms/Search/JumpSearch/JumpSearch";
 
 const Content = () => {
   const { selectedComponent } = useContext(Context);
@@ -38,16 +41,19 @@ const Content = () => {
     LinearSearch: LinearSearch,
     BinarySearch: BinarySearch,
     JumpSearch: JumpSearch,
+    Fibonacci: Fibonacci,
   };
   const codeStringsMappingCPP = {
     LinearSearch: LinearSearchCPP,
     BinarySearch: BinarySearchCPP,
     JumpSearch: JumpSearchCPP,
+    Fibonacci: FibonacciCPP,
   };
   const codeStringsMappingPY = {
     LinearSearch: LinearSearchPY,
     BinarySearch: BinarySearchPY,
     JumpSearch: JumpSearchPY,
+    Fibonacci: FibonacciPY,
   };
 
   var Component = components[selectedComponent];
