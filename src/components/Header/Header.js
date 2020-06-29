@@ -26,7 +26,7 @@ const Header = () => {
       subCategories: [
         {
           name: "N Queens Placement",
-          value: "NQueensPlacement",
+          value: "NQueens",
         },
       ],
     },

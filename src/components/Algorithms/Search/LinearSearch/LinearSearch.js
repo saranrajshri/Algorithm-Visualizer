@@ -5,6 +5,8 @@ import "./LinearSearch.css";
 // Fontawesome icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay, faSyncAlt } from "@fortawesome/free-solid-svg-icons";
+
+// Context
 import { Context } from "../../../../context/Context";
 
 const LinearSearch = () => {

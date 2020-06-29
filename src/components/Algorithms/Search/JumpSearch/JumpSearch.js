@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 
 // StyleSheet
 import "./JumpSearch.css";
@@ -7,6 +7,9 @@ import "./JumpSearch.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay, faSyncAlt } from "@fortawesome/free-solid-svg-icons";
 
+// Context
+import { Context } from "../../../../context/Context";
+
 const JumpSearch = () => {
   const [array, setArray] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(-1);
@@ -14,6 +17,7 @@ const JumpSearch = () => {
   const [stepIndex, setStepIndex] = useState(-1);
   const [target, setTarget] = useState("");
   const [messages, setMessages] = useState([]);
+  const { speed } = useContext(Context);
 
   const generateArray = () => {
     setCurrentIndex(-1);
@@ -51,7 +55,7 @@ const JumpSearch = () => {
       // Log tracer
       setMessages((messages) => [...messages, `Step value : ${step}`]);
 
-      await sleep(1000);
+      await sleep((6 - speed) * 1000);
       var prev = 0;
       var n = array.length;
       while (array[Math.min(step, n) - 1] < target) {
@@ -60,13 +64,13 @@ const JumpSearch = () => {
         // Log tracer
         setMessages((messages) => [...messages, `Previous Index : ${prev}`]);
 
-        await sleep(1000);
+        await sleep((6 - speed) * 1000);
         step += Math.floor(Math.sqrt(n));
 
         // Log tracer
         setMessages((messages) => [...messages, `Step value : ${step}`]);
         setStepIndex(step);
-        await sleep(1000);
+        await sleep((6 - speed) * 1000);
 
         if (prev >= n) {
           setCurrentIndex(-1);
@@ -81,7 +85,7 @@ const JumpSearch = () => {
         setPrevIndex(prev);
         // Log tracer
         setMessages((messages) => [...messages, `Previous Index : ${prev}`]);
-        await sleep(1000);
+        await sleep((6 - speed) * 1000);
         if (prev === Math.min(step, n)) {
           setCurrentIndex(-1);
           // Log tracer

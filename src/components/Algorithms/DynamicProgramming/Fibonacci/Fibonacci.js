@@ -1,17 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 
 // Stylesheet
 import "./Fibonacci.css";
 
 // Fontawesome icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlay, faSyncAlt } from "@fortawesome/free-solid-svg-icons";
+import { faPlay } from "@fortawesome/free-solid-svg-icons";
+
+// Context
+import { Context } from "../../../../context/Context";
 
 const Fibonacci = () => {
   const [array, setArray] = useState([]);
   const [firstIndex, setFirstIndex] = useState(-1);
   const [secondIndex, setSecondIndex] = useState(-1);
   const [messages, setMessages] = useState([]);
+  const { speed } = useContext(Context);
 
   const generateArray = () => {
     var tempArray = [];
@@ -35,11 +39,11 @@ const Fibonacci = () => {
   const generateFibonacci = async () => {
     array[0] = 0;
     setFirstIndex(0);
-    await sleep(1000);
+    await sleep((6 - speed) * 1000);
 
     array[1] = 1;
     setSecondIndex(1);
-    await sleep(1000);
+    await sleep((6 - speed) * 1000);
 
     for (var i = 2; i < array.length; i++) {
       array[i] = array[i - 1] + array[i - 2];
@@ -52,7 +56,7 @@ const Fibonacci = () => {
 
       setFirstIndex(i);
       setSecondIndex(i - 1);
-      await sleep(1000);
+      await sleep((6 - speed) * 1000);
     }
   };
   return (

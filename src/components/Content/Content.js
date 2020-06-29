@@ -19,6 +19,7 @@ import {
   BinarySearchCPP,
   JumpSearchCPP,
   FibonacciCPP,
+  NQueensCPP,
 } from "../CodeStrings/CodeStringsCPP";
 
 import {
@@ -26,11 +27,13 @@ import {
   BinarySearchPY,
   JumpSearchPY,
   FibonacciPY,
+  NQueensPY,
 } from "../CodeStrings/CodeStringsPY";
 
 // Code Themes
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import NQueens from "../Algorithms/Backtracking/NQueens/NQueens";
 
 const Content = () => {
   const { selectedComponent } = useContext(Context);
@@ -42,18 +45,21 @@ const Content = () => {
     BinarySearch: BinarySearch,
     JumpSearch: JumpSearch,
     Fibonacci: Fibonacci,
+    NQueens: NQueens,
   };
   const codeStringsMappingCPP = {
     LinearSearch: LinearSearchCPP,
     BinarySearch: BinarySearchCPP,
     JumpSearch: JumpSearchCPP,
     Fibonacci: FibonacciCPP,
+    NQueens: NQueensCPP,
   };
   const codeStringsMappingPY = {
     LinearSearch: LinearSearchPY,
     BinarySearch: BinarySearchPY,
     JumpSearch: JumpSearchPY,
     Fibonacci: FibonacciPY,
+    NQueens: NQueensPY,
   };
 
   var Component = components[selectedComponent];

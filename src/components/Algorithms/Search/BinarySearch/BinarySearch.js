@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 
 // Stylesheet
 import "./BinarySearch.css";
@@ -7,6 +7,9 @@ import "./BinarySearch.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay, faSyncAlt } from "@fortawesome/free-solid-svg-icons";
 
+// Context
+import { Context } from "../../../../context/Context";
+
 const BinarySearch = () => {
   const [array, setArray] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(-1);
@@ -14,6 +17,7 @@ const BinarySearch = () => {
   const [rightIndex, setRightIndex] = useState(-1);
   const [target, setTarget] = useState("");
   const [messages, setMessages] = useState([]);
+  const { speed } = useContext(Context);
 
   const generateArray = () => {
     setCurrentIndex(-1);
@@ -72,7 +76,7 @@ const BinarySearch = () => {
             ...messages,
             `Moving the left pointer to the index ${mid + 1}`,
           ]);
-          await sleep(1000);
+          await sleep((6 - speed) * 1000);
         } else {
           right = mid - 1;
           setRightIndex(right);
@@ -81,7 +85,7 @@ const BinarySearch = () => {
             ...messages,
             `Moving the right pointer to the index ${mid - 1}`,
           ]);
-          await sleep(1000);
+          await sleep((6 - speed) * 1000);
         }
       }
     } else {

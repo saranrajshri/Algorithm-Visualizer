@@ -3,8 +3,8 @@ import React, { useState, createContext } from "react";
 export const Context = createContext();
 
 const ContextProvider = (props) => {
-  const [selectedComponent, setSelectedComponent] = useState("Fibonacci");
-  const [speed, setSpeed] = useState(1000);
+  const [selectedComponent, setSelectedComponent] = useState("NQueens");
+  const [speed, setSpeed] = useState(1);
 
   return (
     <Context.Provider
