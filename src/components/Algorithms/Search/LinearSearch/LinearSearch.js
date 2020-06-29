@@ -17,6 +17,8 @@ const LinearSearch = () => {
   const generateArray = () => {
     setCurrentIndex(-1);
     setMessages([]);
+    setTarget("");
+
     var tempArray = [];
     for (var i = 0; i < 15; i++) {
       var number = Math.floor(Math.random() * 100 + 1);
@@ -84,6 +86,7 @@ const LinearSearch = () => {
               placeholder="Element to be found"
               className="inputField"
               onChange={handleChange}
+              value={target}
             />
             <span
               className="font-weight-bold cursor-pointer menu-item"

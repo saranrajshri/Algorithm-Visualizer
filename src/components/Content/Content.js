@@ -11,7 +11,7 @@ import LinearSearch from "../Algorithms/Search/LinearSearch/LinearSearch";
 import BinarySearch from "../Algorithms/Search/BinarySearch/BinarySearch";
 
 // CodeString
-import { LinearSearchCode } from "../CodeStrings/CodeStrings";
+import { LinearSearchCode, BinarySearchCode } from "../CodeStrings/CodeStrings";
 
 // Code Themes
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -19,12 +19,15 @@ import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 const Content = () => {
   const { selectedComponent } = useContext(Context);
+
+  // Mappings
   const components = {
     LinearSearch: LinearSearch,
     BinarySearch: BinarySearch,
   };
   const codeStringsMapping = {
     LinearSearch: LinearSearchCode,
+    BinarySearch: BinarySearchCode,
   };
   var Component = components[selectedComponent];
   var codeString = codeStringsMapping[selectedComponent];
