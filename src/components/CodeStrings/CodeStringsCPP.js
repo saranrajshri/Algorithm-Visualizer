@@ -1,4 +1,4 @@
-export const LinearSearchCode = `
+export const LinearSearchCPP = `
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -18,7 +18,7 @@ int main(){
 }
 `;
 
-export const BinarySearchCode = `
+export const BinarySearchCPP = `
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -45,7 +45,7 @@ int main(){
 
 `;
 
-export const JumpSearchCode = `
+export const JumpSearchCPP = `
 #include<bits/stdc++.h>
 using namespace std;
 

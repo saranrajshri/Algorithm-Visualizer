@@ -4,7 +4,6 @@
 .label{
     background-color: #5a595a;
     width: 90px;
-    margin-top:1px;
     margin-left:-2px;
     padding: 5px;
     color:#bbbbbb;
@@ -21,4 +20,15 @@
 #code{
     background-color: #1d1f21;
     overflow: auto;
+}
+.lang-selector:first-child{
+    margin-left:0px;
+}
+.lang-selector{
+    margin-left:2px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+.lang-selector:hover{
+    background-color: #5a595ad1;
 }

@@ -8,7 +8,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faStar,
   faChevronRight,
-  faPlay,
   faTachometerAlt,
   faCode,
   faChevronDown,
@@ -21,7 +20,7 @@ import { Context } from "../../context/Context";
 const Header = () => {
   const { speed, setSpeed } = useContext(Context);
   const { selectedComponent, setSelectedComponent } = useContext(Context);
-  const [menu, setMenu] = useState([
+  const [menu] = useState([
     {
       name: "Backtracking",
       subCategories: [

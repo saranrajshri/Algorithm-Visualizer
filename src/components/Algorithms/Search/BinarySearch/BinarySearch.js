@@ -7,9 +7,6 @@ import "./BinarySearch.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay, faSyncAlt } from "@fortawesome/free-solid-svg-icons";
 
-// Context
-import { Context } from "../../../../context/Context";
-
 const BinarySearch = () => {
   const [array, setArray] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(-1);

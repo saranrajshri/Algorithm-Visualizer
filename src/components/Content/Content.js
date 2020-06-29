@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 
 // Stylesheet
 import "./Content.css";
@@ -11,11 +11,18 @@ import LinearSearch from "../Algorithms/Search/LinearSearch/LinearSearch";
 import BinarySearch from "../Algorithms/Search/BinarySearch/BinarySearch";
 
 // CodeString
+// CPP
 import {
-  LinearSearchCode,
-  BinarySearchCode,
-  JumpSearchCode,
-} from "../CodeStrings/CodeStrings";
+  LinearSearchCPP,
+  BinarySearchCPP,
+  JumpSearchCPP,
+} from "../CodeStrings/CodeStringsCPP";
+
+import {
+  LinearSearchPY,
+  BinarySearchPY,
+  JumpSearchPY,
+} from "../CodeStrings/CodeStringsPY";
 
 // Code Themes
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -24,6 +31,7 @@ import JumpSearch from "../Algorithms/Search/JumpSearch/JumpSearch";
 
 const Content = () => {
   const { selectedComponent } = useContext(Context);
+  const [language, setLanguage] = useState("CPP");
 
   // Mappings
   const components = {
@@ -31,13 +39,25 @@ const Content = () => {
     BinarySearch: BinarySearch,
     JumpSearch: JumpSearch,
   };
-  const codeStringsMapping = {
-    LinearSearch: LinearSearchCode,
-    BinarySearch: BinarySearchCode,
-    JumpSearch: JumpSearchCode,
+  const codeStringsMappingCPP = {
+    LinearSearch: LinearSearchCPP,
+    BinarySearch: BinarySearchCPP,
+    JumpSearch: JumpSearchCPP,
   };
+  const codeStringsMappingPY = {
+    LinearSearch: LinearSearchPY,
+    BinarySearch: BinarySearchPY,
+    JumpSearch: JumpSearchPY,
+  };
+
   var Component = components[selectedComponent];
-  var codeString = codeStringsMapping[selectedComponent];
+  var codeString;
+
+  if (language === "CPP") {
+    codeString = codeStringsMappingCPP[selectedComponent];
+  } else {
+    codeString = codeStringsMappingPY[selectedComponent];
+  }
 
   return (
     <div className="root">
@@ -51,11 +71,22 @@ const Content = () => {
         </div>
         <div className="column" id="code">
           <div className="code">
-            <div className="label">
-              <span>Code</span>
+            <div>
+              <span
+                className="label lang-selector"
+                onClick={() => setLanguage("CPP")}
+              >
+                <span>C++</span>
+              </span>
+              <span
+                className="label lang-selector"
+                onClick={() => setLanguage("PY")}
+              >
+                <span>Python</span>
+              </span>
             </div>
             <SyntaxHighlighter
-              language="cpp"
+              language={language === "CPP" ? "cpp" : "py"}
               style={atomDark}
               customStyle={{ fontSize: 12 }}
             >
