@@ -1,0 +1,10 @@
+.currentNode {
+    background-color: red;
+    color:#fff
+}
+.rangeNode{
+    background-color: green;
+}
+.stepIndexNode{
+    background-color: blue;
+}

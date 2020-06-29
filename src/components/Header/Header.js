@@ -3,9 +3,6 @@ import React, { useState, useContext } from "react";
 // Stylesheets
 import "./Header.css";
 
-// Slider
-import Slider from "react-rangeslider";
-
 // Fontawesome icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -23,7 +20,7 @@ import { Context } from "../../context/Context";
 
 const Header = () => {
   const { speed, setSpeed } = useContext(Context);
-  const { setSelectedComponent } = useContext(Context);
+  const { selectedComponent, setSelectedComponent } = useContext(Context);
   const [menu, setMenu] = useState([
     {
       name: "Backtracking",
@@ -74,7 +71,18 @@ const Header = () => {
   return (
     <div>
       <div className="header">
-        <div className="title">Algorithm Visualizer</div>
+        <div className="title">
+          Algorithm Visualizer
+          {selectedComponent !== "" && selectedComponent !== undefined ? (
+            <span>
+              <FontAwesomeIcon
+                icon={faChevronRight}
+                style={{ marginLeft: 10, marginRight: 10 }}
+              />
+              {selectedComponent}
+            </span>
+          ) : null}
+        </div>
         <div className="trademark">
           Made with <FontAwesomeIcon icon={faHeart} /> by{" "}
           <a

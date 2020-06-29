@@ -3,7 +3,7 @@ import React, { useState, createContext } from "react";
 export const Context = createContext();
 
 const ContextProvider = (props) => {
-  const [selectedComponent, setSelectedComponent] = useState("BinarySearch");
+  const [selectedComponent, setSelectedComponent] = useState("JumpSearch");
   const [speed, setSpeed] = useState(1000);
 
   return (

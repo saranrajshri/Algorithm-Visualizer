@@ -1,28 +1,30 @@
-import React, { useState, useEffect, useRef, useContext } from "react";
+import React, { useState, useEffect } from "react";
 
-import "./LinearSearch.css";
+// StyleSheet
+import "./JumpSearch.css";
 
 // Fontawesome icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay, faSyncAlt } from "@fortawesome/free-solid-svg-icons";
-import { Context } from "../../../../context/Context";
 
-const LinearSearch = () => {
+const JumpSearch = () => {
   const [array, setArray] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(-1);
+  const [prevIndex, setPrevIndex] = useState(-1);
+  const [stepIndex, setStepIndex] = useState(-1);
   const [target, setTarget] = useState("");
   const [messages, setMessages] = useState([]);
-  const { speed } = useContext(Context);
 
   const generateArray = () => {
     setCurrentIndex(-1);
+    setPrevIndex(-1);
+    setStepIndex(-1);
     setMessages([]);
-    setTarget("");
 
     var tempArray = [];
-    for (var i = 0; i < 15; i++) {
-      var number = Math.floor(Math.random() * 100 + 1);
-      tempArray.push(number);
+    var number = Math.floor(Math.random() * 80 + 1);
+    for (var i = number; i < number + 15; i++) {
+      tempArray.push(i);
     }
     setArray(tempArray);
   };
@@ -40,35 +42,64 @@ const LinearSearch = () => {
     setTarget(e.target.value);
   };
 
-  // linear Search
-  const linearSearch = async () => {
+  // jump Search
+  const jumpSearch = async () => {
     if (target.trim() !== "") {
-      for (var i = 0; i < array.length; i++) {
-        setCurrentIndex(i);
-        await sleep((6 - speed) * 1000);
-        setCurrentIndex(i + 1);
+      var step = Math.floor(Math.sqrt(array.length));
+      setStepIndex(step);
+
+      // Log tracer
+      setMessages((messages) => [...messages, `Step value : ${step}`]);
+
+      await sleep(1000);
+      var prev = 0;
+      var n = array.length;
+      while (array[Math.min(step, n) - 1] < target) {
+        prev = step;
+        setPrevIndex(prev);
+        // Log tracer
+        setMessages((messages) => [...messages, `Previous Index : ${prev}`]);
+
+        await sleep(1000);
+        step += Math.floor(Math.sqrt(n));
 
         // Log tracer
-        setMessages((messages) => [
-          ...messages,
-          `Checking at index ${i}. Value at index ${i} is ${array[i]}`,
-        ]);
+        setMessages((messages) => [...messages, `Step value : ${step}`]);
+        setStepIndex(step);
+        await sleep(1000);
 
-        if (array[i] === parseInt(target)) {
+        if (prev >= n) {
+          setCurrentIndex(-1);
           // Log tracer
-          setMessages((messages) => [
-            ...messages,
-            `Element Found at index ${i}`,
-          ]);
-
-          setCurrentIndex(i);
+          setMessages((messages) => [...messages, `Element Not Found`]);
           break;
         }
+      }
+
+      while (array[prev] < target) {
+        prev++;
+        setPrevIndex(prev);
+        // Log tracer
+        setMessages((messages) => [...messages, `Previous Index : ${prev}`]);
+        await sleep(1000);
+        if (prev === Math.min(step, n)) {
+          setCurrentIndex(-1);
+          // Log tracer
+          setMessages((messages) => [...messages, `Element Not Found`]);
+          break;
+        }
+      }
+
+      if (array[prev] === parseInt(target)) {
+        setCurrentIndex(prev);
+        // Log tracer
+        setMessages((messages) => [...messages, `Element Found at ${prev}`]);
       }
     } else {
       alert("Enter the element to find");
     }
   };
+
   return (
     <div>
       <div className="settings">
@@ -90,7 +121,7 @@ const LinearSearch = () => {
             />
             <span
               className="font-weight-bold cursor-pointer menu-item"
-              onClick={linearSearch}
+              onClick={jumpSearch}
             >
               <FontAwesomeIcon icon={faPlay} /> Play
             </span>
@@ -105,14 +136,23 @@ const LinearSearch = () => {
             return (
               <div
                 key={index}
-                className={index === currentIndex ? "node currentNode" : "node"}
+                className={
+                  index === currentIndex
+                    ? "node currentNode"
+                    : index === prevIndex
+                    ? "node rangeNode"
+                    : index >=
+                        stepIndex - Math.floor(Math.sqrt(array.length)) &&
+                      index <= stepIndex
+                    ? "node stepIndexNode"
+                    : "node"
+                }
               >
                 {value}
               </div>
             );
           })}
         </div>
-        {/* Log Tracer */}
         <div className="log-tracer">
           <div className="label">Log Tracer</div>
           <div className="content">
@@ -126,4 +166,4 @@ const LinearSearch = () => {
   );
 };
 
-export default LinearSearch;
+export default JumpSearch;

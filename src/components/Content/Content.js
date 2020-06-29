@@ -11,11 +11,16 @@ import LinearSearch from "../Algorithms/Search/LinearSearch/LinearSearch";
 import BinarySearch from "../Algorithms/Search/BinarySearch/BinarySearch";
 
 // CodeString
-import { LinearSearchCode, BinarySearchCode } from "../CodeStrings/CodeStrings";
+import {
+  LinearSearchCode,
+  BinarySearchCode,
+  JumpSearchCode,
+} from "../CodeStrings/CodeStrings";
 
 // Code Themes
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import JumpSearch from "../Algorithms/Search/JumpSearch/JumpSearch";
 
 const Content = () => {
   const { selectedComponent } = useContext(Context);
@@ -24,10 +29,12 @@ const Content = () => {
   const components = {
     LinearSearch: LinearSearch,
     BinarySearch: BinarySearch,
+    JumpSearch: JumpSearch,
   };
   const codeStringsMapping = {
     LinearSearch: LinearSearchCode,
     BinarySearch: BinarySearchCode,
+    JumpSearch: JumpSearchCode,
   };
   var Component = components[selectedComponent];
   var codeString = codeStringsMapping[selectedComponent];
