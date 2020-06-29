@@ -4,9 +4,12 @@ export const Context = createContext();
 
 const ContextProvider = (props) => {
   const [selectedComponent, setSelectedComponent] = useState("LinearSearch");
+  const [speed, setSpeed] = useState(1000);
 
   return (
-    <Context.Provider value={{ selectedComponent, setSelectedComponent }}>
+    <Context.Provider
+      value={{ selectedComponent, setSelectedComponent, speed, setSpeed }}
+    >
       {props.children}
     </Context.Provider>
   );

@@ -1,16 +1,18 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 
 import "./LinearSearch.css";
 
 // Fontawesome icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay, faSyncAlt } from "@fortawesome/free-solid-svg-icons";
+import { Context } from "../../../../context/Context";
 
 const LinearSearch = () => {
   const [array, setArray] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(-1);
   const [target, setTarget] = useState("");
   const [messages, setMessages] = useState([]);
+  const { speed } = useContext(Context);
 
   const generateArray = () => {
     setCurrentIndex(-1);
@@ -41,7 +43,7 @@ const LinearSearch = () => {
     if (target.trim() !== "") {
       for (var i = 0; i < array.length; i++) {
         setCurrentIndex(i);
-        await sleep(1000);
+        await sleep((6 - speed) * 1000);
         setCurrentIndex(i + 1);
 
         // Log tracer

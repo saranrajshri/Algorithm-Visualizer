@@ -3,6 +3,9 @@ import React, { useState, useContext } from "react";
 // Stylesheets
 import "./Header.css";
 
+// Slider
+import Slider from "react-rangeslider";
+
 // Fontawesome icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -18,8 +21,8 @@ import {
 import { Context } from "../../context/Context";
 
 const Header = () => {
+  const { speed, setSpeed } = useContext(Context);
   const { setSelectedComponent } = useContext(Context);
-
   const [menu, setMenu] = useState([
     {
       name: "Backtracking",
@@ -60,6 +63,10 @@ const Header = () => {
   ]);
   const [selectedIndex, setSelectedIndex] = useState(-1);
 
+  const handleChange = (e) => {
+    setSpeed(e.target.value);
+  };
+
   const toggle = (index) => {
     setSelectedIndex(index);
   };
@@ -79,6 +86,18 @@ const Header = () => {
             </span>
             <span className="font-weight-bold cursor-pointer menu-item">
               <FontAwesomeIcon icon={faTachometerAlt} /> Speed
+            </span>
+            <span>
+              <input
+                id="range"
+                type="range"
+                value={speed}
+                min="1"
+                max="5"
+                step="1"
+                onChange={handleChange}
+                className="slider"
+              />
             </span>
           </div>
         </div>
