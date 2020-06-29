@@ -28,6 +28,10 @@ const Header = () => {
           name: "N Queens Placement",
           value: "NQueens",
         },
+        {
+          name: "Sum Of Subsets",
+          value: "SumOfSubsets",
+        },
       ],
     },
     {
@@ -54,6 +58,10 @@ const Header = () => {
         {
           name: "Linear Search",
           value: "LinearSearch",
+        },
+        {
+          name: "Jump Search",
+          value: "JumpSearch",
         },
       ],
     },
