@@ -3,6 +3,9 @@ import React, { useState, useContext } from "react";
 // Stylesheets
 import "./Header.css";
 
+// React helmet
+import { Helmet } from "react-helmet";
+
 // Fontawesome icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -87,6 +90,9 @@ const Header = () => {
   };
   return (
     <div>
+      <Helmet>
+        <title>{selectedComponent + "- Algorithm Visualizer"}</title>
+      </Helmet>
       <div className="header">
         <div className="title">
           Algorithm Visualizer
