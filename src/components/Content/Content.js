@@ -14,6 +14,7 @@ import Fibonacci from "../Algorithms/DynamicProgramming/Fibonacci/Fibonacci";
 import NQueens from "../Algorithms/Backtracking/NQueens/NQueens";
 import SumOfSubSets from "../Algorithms/Backtracking/SumOfSubSets/SumOfSubsets";
 import NFactorial from "../Algorithms/Recursion/NFactorial";
+import SlidingWindow from "../Algorithms/DynamicProgramming/SlidingWindow/SlidingWindow";
 
 // CodeString
 // CPP
@@ -25,6 +26,7 @@ import {
   NQueensCPP,
   SumOfSubsetsCPP,
   NFactorialCPP,
+  SlidingWindowCPP,
 } from "../CodeStrings/CodeStringsCPP";
 
 import {
@@ -35,6 +37,7 @@ import {
   NQueensPY,
   SumOfSubSstsPY,
   NFactorialPY,
+  SlidingWindowPY,
 } from "../CodeStrings/CodeStringsPY";
 
 // Code Themes
@@ -54,6 +57,7 @@ const Content = () => {
     NQueens: NQueens,
     SumOfSubsets: SumOfSubSets,
     NFactorial: NFactorial,
+    SlidingWindow: SlidingWindow,
   };
   const codeStringsMappingCPP = {
     LinearSearch: LinearSearchCPP,
@@ -63,6 +67,7 @@ const Content = () => {
     NQueens: NQueensCPP,
     SumOfSubsets: SumOfSubsetsCPP,
     NFactorial: NFactorialCPP,
+    SlidingWindow: SlidingWindowCPP,
   };
   const codeStringsMappingPY = {
     LinearSearch: LinearSearchPY,
@@ -72,6 +77,7 @@ const Content = () => {
     NQueens: NQueensPY,
     SumOfSubsets: SumOfSubSstsPY,
     NFactorial: NFactorialPY,
+    SlidingWindow: SlidingWindowPY,
   };
 
   var Component = components[selectedComponent];
