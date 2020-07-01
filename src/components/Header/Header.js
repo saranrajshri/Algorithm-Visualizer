@@ -76,6 +76,10 @@ const Header = () => {
           name: "Jump Search",
           value: "JumpSearch",
         },
+        {
+          name: "Quick Select (kth smallest)",
+          value: "QuickSelect",
+        },
       ],
     },
   ]);

@@ -1,0 +1,14 @@
+.currentNode {
+    background-color: red;
+    color:#fff
+}
+.leftIndex{
+    background-color: green;
+}
+.rightIndex{
+    background-color: blue;
+}
+.resultIndex {
+    background-color: red;
+    color:#fff
+}
