@@ -16,6 +16,7 @@ import SumOfSubSets from "../Algorithms/Backtracking/SumOfSubSets/SumOfSubsets";
 import NFactorial from "../Algorithms/Recursion/NFactorial";
 import SlidingWindow from "../Algorithms/DynamicProgramming/SlidingWindow/SlidingWindow";
 import QuickSelect from "../Algorithms/Search/QuickSelect/QuickSelect";
+import BubbleSort from "../Algorithms/Sorting/BubbleSort/BubbleSort";
 
 // CodeString
 // CPP
@@ -29,6 +30,7 @@ import {
   NFactorialCPP,
   SlidingWindowCPP,
   QuickSelectCPP,
+  BubbleSortCPP,
 } from "../CodeStrings/CodeStringsCPP";
 
 import {
@@ -41,6 +43,7 @@ import {
   NFactorialPY,
   SlidingWindowPY,
   QuickSelectPY,
+  BubbleSortPY,
 } from "../CodeStrings/CodeStringsPY";
 
 // Code Themes
@@ -62,6 +65,7 @@ const Content = () => {
     NFactorial: NFactorial,
     SlidingWindow: SlidingWindow,
     QuickSelect: QuickSelect,
+    BubbleSort: BubbleSort,
   };
   const codeStringsMappingCPP = {
     LinearSearch: LinearSearchCPP,
@@ -73,6 +77,7 @@ const Content = () => {
     NFactorial: NFactorialCPP,
     SlidingWindow: SlidingWindowCPP,
     QuickSelect: QuickSelectCPP,
+    BubbleSort: BubbleSortCPP,
   };
   const codeStringsMappingPY = {
     LinearSearch: LinearSearchPY,
@@ -84,6 +89,7 @@ const Content = () => {
     NFactorial: NFactorialPY,
     SlidingWindow: SlidingWindowPY,
     QuickSelect: QuickSelectPY,
+    BubbleSort: BubbleSortPY,
   };
 
   var Component = components[selectedComponent];

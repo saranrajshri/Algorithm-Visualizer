@@ -82,6 +82,15 @@ const Header = () => {
         },
       ],
     },
+    {
+      name: "Sorting",
+      subCategories: [
+        {
+          name: "Bubble Sort",
+          value: "BubbleSort",
+        },
+      ],
+    },
   ]);
   const [selectedIndex, setSelectedIndex] = useState(-1);
 
