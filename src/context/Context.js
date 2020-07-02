@@ -3,7 +3,7 @@ import React, { useState, createContext } from "react";
 export const Context = createContext();
 
 const ContextProvider = (props) => {
-  const [selectedComponent, setSelectedComponent] = useState("SelectionSort");
+  const [selectedComponent, setSelectedComponent] = useState("InsertionSort");
   const [speed, setSpeed] = useState(1);
 
   return (

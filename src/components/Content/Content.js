@@ -33,6 +33,7 @@ import {
   QuickSelectCPP,
   BubbleSortCPP,
   SelectionSortCPP,
+  InsertionSortCPP,
 } from "../CodeStrings/CodeStringsCPP";
 
 import {
@@ -47,11 +48,13 @@ import {
   QuickSelectPY,
   BubbleSortPY,
   SelectionSortPY,
+  InsertionSortPY,
 } from "../CodeStrings/CodeStringsPY";
 
 // Code Themes
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import InsertionSort from "../Algorithms/Sorting/InsertionSort/InsertionSort";
 
 const Content = () => {
   const { selectedComponent } = useContext(Context);
@@ -70,6 +73,7 @@ const Content = () => {
     QuickSelect: QuickSelect,
     BubbleSort: BubbleSort,
     SelectionSort: SelectionSort,
+    InsertionSort: InsertionSort,
   };
   const codeStringsMappingCPP = {
     LinearSearch: LinearSearchCPP,
@@ -83,6 +87,7 @@ const Content = () => {
     QuickSelect: QuickSelectCPP,
     BubbleSort: BubbleSortCPP,
     SelectionSort: SelectionSortCPP,
+    InsertionSort: InsertionSortCPP,
   };
   const codeStringsMappingPY = {
     LinearSearch: LinearSearchPY,
@@ -96,6 +101,7 @@ const Content = () => {
     QuickSelect: QuickSelectPY,
     BubbleSort: BubbleSortPY,
     SelectionSort: SelectionSortPY,
+    InsertionSort: InsertionSortPY,
   };
 
   var Component = components[selectedComponent];

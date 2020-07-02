@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 
-import "./SelectionSort.css";
+import "./InsertionSort.css";
 
 // Fontawesome icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,7 +9,7 @@ import { faPlay, faSyncAlt } from "@fortawesome/free-solid-svg-icons";
 // Context
 import { Context } from "../../../../context/Context";
 
-const SelectionSort = () => {
+const InsertionSort = () => {
   const [array, setArray] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(-1);
   const [leftIndex, setLeftIndex] = useState(-1);
@@ -38,43 +38,33 @@ const SelectionSort = () => {
     return new Promise((resolve) => setTimeout(resolve, milliseconds));
   };
 
-  // selectionSort
-  const selectionSort = async () => {
-    var i, j, min_idx;
+  // insertionSort
+  const insertionSort = async () => {
+    var i, key, j;
     var n = array.length;
-    // One by one move boundary of unsorted subarray
-    for (i = 0; i < n - 1; i++) {
-      // Find the minimum element in unsorted array
-      min_idx = i;
-      // Log
-      setMessages((messages) => [...messages, `New Min Index : ${i}`]);
-      for (j = i + 1; j < n; j++)
-        if (array[j] < array[min_idx]) {
-          // Log
-          setMessages((messages) => [...messages, `New Min Index : ${j}`]);
-          min_idx = j;
-        }
-      // Swap the found minimum element with the first element
-      var tempArray = array;
-      var temp = tempArray[min_idx];
-      tempArray[min_idx] = tempArray[i];
-      tempArray[i] = temp;
-      // Log
-      setMessages((messages) => [
-        ...messages,
-        `Swapping values at index ${j} and ${j + 1}`,
-      ]);
-      setLeftIndex(min_idx);
-      setRightIndex(i);
-      await sleep(300);
-      setArray(tempArray);
+    for (i = 1; i < n; i++) {
+      key = array[i];
+      j = i - 1;
+
+      while (j >= 0 && array[j] > key) {
+        setLeftIndex(j);
+        setRightIndex(j + 1);
+        await sleep(300);
+        // log
+        setMessages((messages) => [
+          ...messages,
+          `Swapping values at index at ${j} and ${j + 1}`,
+        ]);
+        array[j + 1] = array[j];
+        j = j - 1;
+      }
+      array[j + 1] = key;
     }
     setLeftIndex(-1);
     setRightIndex(-1);
-    // Log
-    setMessages((messages) => [...messages, `Array Sorted`]);
+    // log
+    setMessages((messages) => [...messages, `Array Sorted!!`]);
   };
-  console.log(array);
   return (
     <div>
       <div className="settings">
@@ -89,7 +79,7 @@ const SelectionSort = () => {
 
             <span
               className="font-weight-bold cursor-pointer menu-item"
-              onClick={selectionSort}
+              onClick={insertionSort}
             >
               <FontAwesomeIcon icon={faPlay} /> Play
             </span>
@@ -158,4 +148,4 @@ const SelectionSort = () => {
   );
 };
 
-export default SelectionSort;
+export default InsertionSort;

@@ -93,6 +93,10 @@ const Header = () => {
           name: "Selection Sort",
           value: "SelectionSort",
         },
+        {
+          name: "Insertion Sort",
+          value: "InsertionSort",
+        },
       ],
     },
   ]);
