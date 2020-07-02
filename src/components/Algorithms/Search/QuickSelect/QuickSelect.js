@@ -70,7 +70,7 @@ const QuickSelect = () => {
       setLeftIndex(leftIndex);
       setRightIndex(rightIndex);
       setPivotIndex(pivotIndex);
-      await sleep(1000);
+      await sleep(500);
 
       // Log tracer
       setMessages((messages) => [...messages, `Start Index ${startIndex}`]);
@@ -95,13 +95,13 @@ const QuickSelect = () => {
           leftIndex++;
           setLeftIndex(leftIndex);
           setMessages((messages) => [...messages, `Left Index ${leftIndex}`]);
-          await sleep(1000);
+          await sleep(500);
         }
         if (array[rightIndex] >= array[pivotIndex]) {
           rightIndex--;
           setRightIndex(rightIndex);
           setMessages((messages) => [...messages, `Right Index ${rightIndex}`]);
-          await sleep(1000);
+          await sleep(500);
         }
       }
       setMessages((messages) => [

@@ -1,0 +1,17 @@
+.bar{
+    display: inline-block;
+    background-color: #393939;
+    border:1px solid #505050;
+}
+.leftBar {
+    background-color: green;
+}
+.rightBar{
+    background-color: blue;
+}
+.nodes{
+    margin-top:20px;
+}
+.bars{
+    margin-left:100px;
+}

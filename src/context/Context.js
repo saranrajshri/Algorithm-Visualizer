@@ -3,7 +3,7 @@ import React, { useState, createContext } from "react";
 export const Context = createContext();
 
 const ContextProvider = (props) => {
-  const [selectedComponent, setSelectedComponent] = useState("BubbleSort");
+  const [selectedComponent, setSelectedComponent] = useState("SelectionSort");
   const [speed, setSpeed] = useState(1);
 
   return (

@@ -89,6 +89,10 @@ const Header = () => {
           name: "Bubble Sort",
           value: "BubbleSort",
         },
+        {
+          name: "Selection Sort",
+          value: "SelectionSort",
+        },
       ],
     },
   ]);
