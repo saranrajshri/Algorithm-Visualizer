@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 
+import "./SumOfSubSets.css";
+
 // Fontawesome icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay, faSyncAlt } from "@fortawesome/free-solid-svg-icons";
@@ -39,49 +41,69 @@ const SumOfSubSets = () => {
   };
 
   const handleChange = (e) => {
-    setTarget(parseInt(e.target.value));
+    setTarget(e.target.value);
   };
 
+  const displaySubset = (subSet, size) => {
+    var tempSolution = solution;
+    var tempSub = [];
+    for (var i = 0; i < size; i++) {
+      tempSub.push(subSet[i]);
+    }
+    tempSolution.push(tempSub);
+    setSolution(tempSolution);
+  };
   //  Solve
-  const solve = async (n, sum) => {
+  const subsetSum = async (subSet, n, subSize, total, nodeCount, sum) => {
+    setCurrentIndex(subSize);
+    await sleep(500);
+    if (total === sum) {
+      displaySubset(subSet, subSize); //print the subset
+      await subsetSum(
+        subSet,
+        n,
+        subSize - 1,
+        total - array[nodeCount],
+        nodeCount + 1,
+        sum
+      ); //for other subsets
+      return;
+    } else {
+      for (var i = nodeCount; i < n; i++) {
+        setFirstIndex(i);
+        await sleep(500);
+        //find node along breadth
+        subSet[subSize] = array[i];
+        subsetSum(subSet, n, subSize + 1, total + array[i], i + 1, sum); //do for next node in depth
+      }
+    }
+  };
+
+  const findSubSet = async (size, sum) => {
+    let subSet = [];
     //   Log Tracer
     setMessages((messages) => [...messages, `Searching for the sum: ${sum}`]);
-
-    setCurrentIndex(n);
-    await sleep(100);
-    if (target !== "") {
-      if (sum == 0) {
-        return true;
-      }
-      if (n == 0 && sum != 0) return false;
-
-      if (array[n - 1] > sum) {
-        setFirstIndex(n - 1);
-        await sleep(100);
-        return solve(n - 1, sum, currentIndex);
-      }
-      return (
-        (await solve(n - 1, sum, currentIndex)) ||
-        (await solve(n - 1, sum - array[n - 1], currentIndex))
-      );
-    } else {
-      alert("Enter the sum to find");
-    }
+    await subsetSum(subSet, size, 0, 0, 0, parseInt(sum));
+    subSet = undefined;
   };
 
   const execute = async () => {
     //   Log Tracer
     setMessages((messages) => [...messages, `Given set : ${array}`]);
     setMessages((messages) => [...messages, `Desired Sum : ${target}`]);
-    if (await solve(array.length, target, [])) {
-      await sleep(100);
-      //   Log Tracer
-      setMessages((messages) => [...messages, `Found a Possible Solution`]);
-    } else {
-      //   Log Tracer
-      setMessages((messages) => [...messages, `No Solution found`]);
-    }
+    await findSubSet(array.length, target);
+    setFirstIndex(-1);
+    setCurrentIndex(-1);
     //   Log Tracer
+    setMessages((messages) => [...messages, `========`]);
+    setMessages((messages) => [...messages, `Solution`]);
+    setMessages((messages) => [...messages, `========`]);
+    solution.map((subSolution, index) => {
+      setMessages((messages) => [
+        ...messages,
+        `Solution ${index + 1} : ${subSolution}`,
+      ]);
+    });
   };
   return (
     <div>
