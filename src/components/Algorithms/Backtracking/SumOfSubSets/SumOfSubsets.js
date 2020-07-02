@@ -57,7 +57,7 @@ const SumOfSubSets = () => {
 
       if (array[n - 1] > sum) {
         setFirstIndex(n - 1);
-        await sleep(1000);
+        await sleep(100);
         return solve(n - 1, sum, currentIndex);
       }
       return (
