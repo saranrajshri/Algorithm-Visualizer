@@ -51,12 +51,13 @@ const SumOfSubSets = () => {
       tempSub.push(subSet[i]);
     }
     tempSolution.push(tempSub);
+    setMessages((messages) => [...messages, `Possible Solution : ${tempSub}`]);
     setSolution(tempSolution);
   };
   //  Solve
   const subsetSum = async (subSet, n, subSize, total, nodeCount, sum) => {
     setCurrentIndex(subSize);
-    await sleep(500);
+    await sleep(50);
     if (total === sum) {
       displaySubset(subSet, subSize); //print the subset
       await subsetSum(
@@ -71,10 +72,10 @@ const SumOfSubSets = () => {
     } else {
       for (var i = nodeCount; i < n; i++) {
         setFirstIndex(i);
-        await sleep(500);
+        await sleep(50);
         //find node along breadth
         subSet[subSize] = array[i];
-        subsetSum(subSet, n, subSize + 1, total + array[i], i + 1, sum); //do for next node in depth
+        await subsetSum(subSet, n, subSize + 1, total + array[i], i + 1, sum); //do for next node in depth
       }
     }
   };
@@ -98,12 +99,7 @@ const SumOfSubSets = () => {
     setMessages((messages) => [...messages, `========`]);
     setMessages((messages) => [...messages, `Solution`]);
     setMessages((messages) => [...messages, `========`]);
-    solution.map((subSolution, index) => {
-      setMessages((messages) => [
-        ...messages,
-        `Solution ${index + 1} : ${subSolution}`,
-      ]);
-    });
+    setMessages((messages) => [...messages, `${solution}`]);
   };
   return (
     <div>
