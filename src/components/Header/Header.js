@@ -101,6 +101,10 @@ const Header = () => {
           name: "Merge Sort",
           value: "MergeSort",
         },
+        {
+          name: "Quick Sort",
+          value: "QuickSort",
+        },
       ],
     },
   ]);
