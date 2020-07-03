@@ -35,6 +35,9 @@
     padding-left:30px;
 }
 
+.left-content span:hover{
+    color: #bbbbbbd2;
+}
 .mainContent{
     margin-left:30px;
     padding-top:50px;

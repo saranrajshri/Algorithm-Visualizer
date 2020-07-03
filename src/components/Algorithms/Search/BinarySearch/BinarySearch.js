@@ -91,6 +91,8 @@ const BinarySearch = () => {
     } else {
       alert("Enter the element to find");
     }
+    setLeftIndex(-1);
+    setRightIndex(-1);
   };
   return (
     <div>

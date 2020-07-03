@@ -111,7 +111,11 @@ const Header = () => {
   };
 
   const toggle = (index) => {
-    setSelectedIndex(index);
+    if (selectedIndex === index) {
+      setSelectedIndex(-1);
+    } else {
+      setSelectedIndex(index);
+    }
   };
   return (
     <div>
