@@ -107,6 +107,15 @@ const Header = () => {
         },
       ],
     },
+    {
+      name: "Uncategorized",
+      subCategories: [
+        {
+          name: "KMP Algorithm",
+          value: "PatternMatching",
+        },
+      ],
+    },
   ]);
   const [selectedIndex, setSelectedIndex] = useState(-1);
 

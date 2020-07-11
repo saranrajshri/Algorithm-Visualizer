@@ -20,6 +20,7 @@ import BubbleSort from "../Algorithms/Sorting/BubbleSort/BubbleSort";
 import SelectionSort from "../Algorithms/Sorting/SelectionSort/SelectionSort";
 import InsertionSort from "../Algorithms/Sorting/InsertionSort/InsertionSort";
 import MergeSort from "../Algorithms/Sorting/MergeSort/MergeSort";
+import PatternMatching from "../Algorithms/Uncategorized/PatternMatching/PatternMatching";
 
 // CodeString
 // CPP
@@ -38,6 +39,7 @@ import {
   InsertionSortCPP,
   MergeSortCPP,
   QuickSortCPP,
+  PatternMatchingCPP,
 } from "../CodeStrings/CodeStringsCPP";
 
 import {
@@ -55,6 +57,7 @@ import {
   InsertionSortPY,
   MergeSortPY,
   QuickSortPY,
+  PatternMatchingPY,
 } from "../CodeStrings/CodeStringsPY";
 
 // Code Themes
@@ -82,6 +85,7 @@ const Content = () => {
     InsertionSort: InsertionSort,
     MergeSort: MergeSort,
     QuickSort: QuickSort,
+    PatternMatching: PatternMatching,
   };
   const codeStringsMappingCPP = {
     LinearSearch: LinearSearchCPP,
@@ -98,6 +102,7 @@ const Content = () => {
     InsertionSort: InsertionSortCPP,
     MergeSort: MergeSortCPP,
     QuickSort: QuickSortCPP,
+    PatternMatching: PatternMatchingCPP,
   };
   const codeStringsMappingPY = {
     LinearSearch: LinearSearchPY,
@@ -114,6 +119,7 @@ const Content = () => {
     InsertionSort: InsertionSortPY,
     MergeSort: MergeSortPY,
     QuickSort: QuickSortPY,
+    PatternMatching: PatternMatchingPY,
   };
 
   var Component = components[selectedComponent];

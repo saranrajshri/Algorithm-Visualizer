@@ -3,7 +3,7 @@ import React, { useState, createContext } from "react";
 export const Context = createContext();
 
 const ContextProvider = (props) => {
-  const [selectedComponent, setSelectedComponent] = useState("QuickSort");
+  const [selectedComponent, setSelectedComponent] = useState("PatternMatching");
   const [speed, setSpeed] = useState(1);
 
   return (
