@@ -9,7 +9,7 @@
 <h4 align="center">An web app built on top of <a href="http://reactjs.org" target="_blank">React</a>. It visualizes the working of various algorithms.</h4>
 
 <div align="center">
-<img src="" />
+<img src="https://i.ibb.co/fNpPT6H/ezgif-com-video-to-gif-1.gif" />
 </div>
 
 <p align="center">
