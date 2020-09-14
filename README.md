@@ -1,67 +1,61 @@
+<h1 align="center">
+  <br>
+  <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fhackr.io%2Ftutorials%2Flearn-data-structures-algorithms&psig=AOvVaw3qY-YOrses1ECQQMpizWKw&ust=1600178831172000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMibg-_o6OsCFQAAAAAdAAAAABAP"/>
+  <br>
+  Algorithm Visualizer Gallery
+  <br>
+</h1>
 
-## Available Scripts
+<h4 align="center">An web app built on top of <a href="http://reactjs.org" target="_blank">React</a>. It visualizes the working of various algorithms.</h4>
 
-In the project directory, you can run:
+<div align="center">
+<img src="https://i.ibb.co/FhtPHWC/ezgif-com-video-to-gif.gif" />
+</div>
 
-### `yarn start`
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=P5VyAV4FIMA">Video Demo</a> *
+  <a href="#key-features">Key Features</a> •
+  <a href="#how-to-use">How To Use</a> •
+  <a href="#download">Download</a> •
+  <a href="#related">Related</a> •
+  <a href="#license">License</a>
+</p>
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `yarn test`
+## Key Features
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* Work on multiple tabs
+* Make GET and POST Request
+* Send JSON in the body
+* View response of a request
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## How To Use
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+# Clone this repository
+$ git clone https://github.com/saranrajshri/Postman-Clone.git
 
-### `yarn eject`
+# Go into the repository
+$ cd Postman-Clone
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Install dependencies
+$ npm install
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Run the app
+$ npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Note: If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Related
 
-## Learn More
+[Postman-Clone-Web](https://github.com/saranrajshri/) - Web version of Markdownify
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## License
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+MIT
