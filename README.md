@@ -21,7 +21,7 @@
   <a href="#license">License</a>
 </p>
 
-
+## <a href="https://saranrajshri.github.io/Algorithm-Visualizer">Live Demo</a>
 
 ## Key Features
 
