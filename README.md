@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fhackr.io%2Ftutorials%2Flearn-data-structures-algorithms&psig=AOvVaw3qY-YOrses1ECQQMpizWKw&ust=1600178831172000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMibg-_o6OsCFQAAAAAdAAAAABAP"/>
+  <img src="https://www.ie.edu/exponential-learning/blog/wp-content/uploads/2018/11/ml-icon-141x146.png"/>
   <br>
   Algorithm Visualizer Gallery
   <br>
